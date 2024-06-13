@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5go137r30ayo"]
+
+[ext_resource type="PackedScene" uid="uid://octv8nib0hxr" path="res://tile_platform.tscn" id="1_3jbwv"]
+[ext_resource type="PackedScene" uid="uid://br4a1y4x8fcb3" path="res://ball.tscn" id="2_4hhlc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 1170.0
+offset_bottom = 545.0
+mouse_filter = 2
+color = Color(1, 0.227451, 1, 1)
+
+[node name="TilePlatform" parent="." instance=ExtResource("1_3jbwv")]
+position = Vector2(195, 127)
+
+[node name="TilePlatform2" parent="." instance=ExtResource("1_3jbwv")]
+position = Vector2(246, 363)
+
+[node name="TilePlatform3" parent="." instance=ExtResource("1_3jbwv")]
+position = Vector2(868, 99)
+
+[node name="Ball" parent="." instance=ExtResource("2_4hhlc")]
+position = Vector2(640, 191)
