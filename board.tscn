@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgvlrffvqmw1s"]
+
+[ext_resource type="PackedScene" uid="uid://dohtphkfedjt" path="res://tile.tscn" id="1_sck7b"]
+[ext_resource type="Script" path="res://board.gd" id="1_tvi6c"]
+
+[node name="GameBoard" type="Node2D"]
+
+[node name="Board" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(150, 150)
+offset_left = 204.0
+offset_top = 58.0
+offset_right = 736.0
+offset_bottom = 590.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+columns = 4
+script = ExtResource("1_tvi6c")
+
+[node name="Tile" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile2" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile3" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile4" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile5" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile6" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile7" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile8" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile9" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile10" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile11" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile12" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile13" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile14" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile15" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
+
+[node name="Tile16" parent="Board" instance=ExtResource("1_sck7b")]
+layout_mode = 2
