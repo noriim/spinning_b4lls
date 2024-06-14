@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://tileplatform.gd" id="1_p77kp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krqu8"]
+size = Vector2(128.5, 127.75)
 
 [node name="TilePlatform" type="StaticBody2D" groups=["dropable"]]
 script = ExtResource("1_p77kp")

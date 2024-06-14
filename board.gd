@@ -1,4 +1,4 @@
-extends GridContainer
+extends Node2D
 
 var color_picker = false
 

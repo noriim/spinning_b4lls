@@ -2,17 +2,42 @@ extends ColorRect
 
 var mouse_in = false
 
+# Function to check if any sibling node is above the given node
+func is_any_sibling_above(node) -> bool:
+	# Get the parent of the node
+	var siblings = node.get_parent().get_children()
+	
+	# Get the global position of the node
+	var node_pos = node.global_position + size/2
+	print("node_pos:", node_pos)
+	# Iterate through the parent's children
+	for sibling in siblings:
+		# Ensure we are not comparing the node with itself
+		if sibling != node and sibling is Node2D:
+			var sibling_pos = sibling.global_position 
+			print("sibling_pos:", sibling_pos)
+			# Check if the sibling is above the node
+			if sibling_pos.y == node_pos.y:
+				node.visible = false
+				print("above")
+				return true
+	print("none above 1")
+	node.visible = false
+	return false
+
+
 func _input(event):
 	if event.is_action_pressed("click"):
 		if mouse_in:
-			if get_child_count() > 0:
-				print("already a ball here") # temporary check
+			if is_any_sibling_above(self):
+				print("already a ball here")
 			else:
 				var ball = preload("res://ball.tscn").instantiate()
-				ball.position = size / 2
-				add_child(ball)
+				ball.position = position + size / 2
+				get_parent().add_child(ball)
 				get_parent()._on_tile_change_color()
-				get_child(0).get_child(1).visible = get_parent().color_picker
+				ball.get_child(1).visible = get_parent().color_picker
+			
 
 func _on_mouse_entered():
 	mouse_in = true
@@ -20,12 +45,4 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	mouse_in = false
 
-func _get_drag_data(at_position):
-	pass
-	
-func _can_drop_data(at_position, data):
-	return data is ColorRect
-	
-func _drop_data(at_position, data):
-	pass
 	

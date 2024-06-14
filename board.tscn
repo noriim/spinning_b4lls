@@ -4,62 +4,52 @@
 [ext_resource type="Script" path="res://board.gd" id="1_tvi6c"]
 
 [node name="GameBoard" type="Node2D"]
-
-[node name="Board" type="GridContainer" parent="."]
-custom_minimum_size = Vector2(150, 150)
-offset_left = 204.0
-offset_top = 58.0
-offset_right = 736.0
-offset_bottom = 590.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-columns = 4
 script = ExtResource("1_tvi6c")
 
-[node name="Tile" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 62.0
+offset_top = 52.0
+offset_right = 190.0
+offset_bottom = 180.0
 
-[node name="Tile2" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile2" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 336.0
+offset_top = 72.0
+offset_right = 464.0
+offset_bottom = 200.0
 
-[node name="Tile3" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile3" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 66.0
+offset_top = 342.0
+offset_right = 194.0
+offset_bottom = 470.0
 
-[node name="Tile4" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile4" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 340.0
+offset_top = 362.0
+offset_right = 468.0
+offset_bottom = 490.0
 
-[node name="Tile5" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile5" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 612.0
+offset_top = 66.0
+offset_right = 740.0
+offset_bottom = 194.0
 
-[node name="Tile6" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile6" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 926.0
+offset_top = 68.0
+offset_right = 1054.0
+offset_bottom = 196.0
 
-[node name="Tile7" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile7" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 616.0
+offset_top = 356.0
+offset_right = 744.0
+offset_bottom = 484.0
 
-[node name="Tile8" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile9" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile10" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile11" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile12" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile13" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile14" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile15" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
-
-[node name="Tile16" parent="Board" instance=ExtResource("1_sck7b")]
-layout_mode = 2
+[node name="Tile8" parent="." instance=ExtResource("1_sck7b")]
+offset_left = 930.0
+offset_top = 358.0
+offset_right = 1058.0
+offset_bottom = 486.0

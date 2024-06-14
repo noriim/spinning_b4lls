@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dohtphkfedjt"]
+[gd_scene load_steps=3 format=3 uid="uid://dohtphkfedjt"]
 
 [ext_resource type="Script" path="res://tile.gd" id="1_x0f4u"]
+[ext_resource type="PackedScene" uid="uid://octv8nib0hxr" path="res://tile_platform.tscn" id="2_qv1sa"]
 
 [node name="Tile" type="ColorRect"]
-custom_minimum_size = Vector2(130, 130)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 script = ExtResource("1_x0f4u")
+
+[node name="TilePlatform" parent="." instance=ExtResource("2_qv1sa")]
+position = Vector2(64, 64)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
