@@ -53,28 +53,31 @@ func is_ball_above(vector):
 
 func _process(delta):
 	if draggable:
-		if Input.is_action_just_pressed("click"):
+		if Input.is_action_just_pressed("click") and not global.is_traveling:
 			initialPos = global_position
 			offset = get_global_mouse_position() - global_position
 			global.is_dragging = true
+			z_index = 5 #increase if needed
 			if which_sibling_above(self.global_position):
 				which_sibling_above(self.global_position).visible = false
-		if Input.is_action_pressed("click"):
+		if Input.is_action_pressed("click") and global.is_dragging:
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
 			if which_sibling_above(self.global_position):
 				which_sibling_above(self.global_position).visible = false
 			var tween = get_tree().create_tween()
+			global.is_traveling = true
 			if is_inside_dropable and not is_ball_above(body_ref.global_position):
 				tween.tween_property(self, "position", body_ref.global_position, 0.2).set_ease(Tween.EASE_OUT)
-				print("TEST")
 				if initialPos != body_ref.global_position:
 					which_sibling_above(initialPos).visible = true
 			else:
 				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
-				print("TEST2")
 				which_sibling_above(initialPos).visible = false
+			await get_tree().create_timer(0.2).timeout
+			z_index = 0
+			global.is_traveling = false
 
 func clear_behind_balls():
 	if which_sibling_above(self.global_position):
