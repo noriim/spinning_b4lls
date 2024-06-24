@@ -50,7 +50,7 @@ func is_ball_above(vector):
 				return sibling
 	print("none above 2")
 	return false
-
+#TODO: fix bug caused by mouse being ignored after dragged on top of other ball
 func _process(delta):
 	if draggable:
 		if Input.is_action_just_pressed("click") and not global.is_traveling:
@@ -58,14 +58,12 @@ func _process(delta):
 			offset = get_global_mouse_position() - global_position
 			global.is_dragging = true
 			z_index = 5 #increase if needed
-			if which_sibling_above(self.global_position):
-				which_sibling_above(self.global_position).visible = false
+			clear_behind_balls()
 		if Input.is_action_pressed("click") and global.is_dragging:
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
-			if which_sibling_above(self.global_position):
-				which_sibling_above(self.global_position).visible = false
+			clear_behind_balls()
 			var tween = get_tree().create_tween()
 			global.is_traveling = true
 			if is_inside_dropable and not is_ball_above(body_ref.global_position):
@@ -81,7 +79,7 @@ func _process(delta):
 
 func clear_behind_balls():
 	if which_sibling_above(self.global_position):
-					which_sibling_above(self.global_position).visible = false
+		which_sibling_above(self.global_position).visible = false
 
 
 func _on_area_2d_mouse_entered():
